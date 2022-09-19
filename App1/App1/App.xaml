@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             x:Class="App1.App">
+    <Application.Resources>
+
+        <System:Int32 x:Key="DefaultCornerRadius">6</System:Int32>
+        
+        <Style x:Key="BaseButtonStyle"
+                   TargetType="Button">
+            <Setter Property="BorderRadius"
+                        Value="{StaticResource DefaultCornerRadius}" />
+            <Setter Property="CornerRadius"
+                        Value="{StaticResource DefaultCornerRadius}" />
+            <Setter Property="FontFamily"
+                        Value="Roboto-Medium.ttf#Roboto-Medium" />
+            <Setter Property="TextTransform"
+                        Value="Uppercase" />
+            <Setter Property="FontSize"
+                        Value="Medium" />
+        </Style>
+        
+        <Style x:Key="PrimaryButtonStyle"
+                   TargetType="Button"
+                   BasedOn="{StaticResource BaseButtonStyle}">
+            <Setter Property="BackgroundColor"
+                        Value="Blue" />
+            <Setter Property="TextColor"
+                        Value="Red" />
+        </Style>
+
+
+        <Style x:Key="PrimaryRoundedButton"
+                   TargetType="Button"
+                   BasedOn="{StaticResource PrimaryButtonStyle}">
+            <Setter Property="FontSize"
+                        Value="Medium" />
+            <Setter Property="CornerRadius"
+                        Value="50" />
+            <Setter Property="BorderColor"
+                        Value="BlanchedAlmond" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="AddZoneRoundedButton" BasedOn="{StaticResource PrimaryRoundedButton}">
+            <Setter Property="WidthRequest" Value="50" />
+            <Setter Property="HeightRequest" Value="50" />
+        </Style>
+    </Application.Resources>
+</Application>
